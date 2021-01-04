@@ -105,7 +105,7 @@ def process(stdout, expected_size):
     """Take in stdout, return list of dicts that are created via loading the json output"""
     ignore = re.compile(r'((:message=>)|Sending Logstash logs to|Thread.exclusive is deprecated)')
     output = []
-    warning = re.compile(r"(warning:|Sending Logstash('s)? logs to|\[WARN \]|\[INFO \])")
+    warning = re.compile(r"(warning:|Sending Logstash('s)? logs to|\[WARN \]|\[INFO \]|Using bundled JDK:|WARNING)")
     for line in stdout.split("\n"):
         if not line.strip():
             continue
