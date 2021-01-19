@@ -1,0 +1,13 @@
+
+data = [
+{
+    "raw": "<14>1 2020-03-09T16:23:04.318670+01:00 master01 -bash: - -bash:  HISTORY: PID=23883 UID=0 echo boem",
+    "expected": {
+        "@source_host": "master01",
+        "program": "-bash",
+        "uid": 0,
+        "pid": 23883,
+        "command": "echo boem",
+    }
+},
+]

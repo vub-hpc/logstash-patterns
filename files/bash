@@ -1,0 +1,1 @@
+BASH_MSG - -bash:\s+HISTORY: PID=%{INT:pid:int} UID=%{INT:uid:int} %{GREEDYDATA:command}

@@ -1,29 +1,23 @@
 #!/usr/bin/env groovy
 
-def VIRTUALENV_VERSION = "16.4.0"
-def LOGSTASH_VERSION = "6.6.0"
+def LOGSTASH_VERSION = "7.10.2"
 
 node {
-    stage('Checkout') {
+    stage('checkout git') {
         checkout scm
-        sh "git clean -fxd"
+        // remove untracked files (*.pyc for example)
+        sh 'git clean -fxd'
     }
 
-    stage('Setup virtualenv') {
-        sh "wget -q -O virtualenv-${VIRTUALENV_VERSION}.tar.gz https://github.com/pypa/virtualenv/archive/${VIRTUALENV_VERSION}.tar.gz"
-        sh "tar -xzf virtualenv-${VIRTUALENV_VERSION}.tar.gz"
-        sh "python virtualenv-${VIRTUALENV_VERSION}/virtualenv.py venv"
-        env.PATH = "${pwd()}/venv/bin:${env.PATH}"
-    }
-
-    stage('Build') {
-        sh "pip install vsc-base"
-        sh "wget -q https://artifacts.elastic.co/downloads/logstash/logstash-${LOGSTASH_VERSION}.tar.gz"
-        sh "tar -xzf logstash-${LOGSTASH_VERSION}.tar.gz"
+    stage('install logstash') {
+        sh "wget -nv https://artifacts.elastic.co/downloads/logstash/logstash-${LOGSTASH_VERSION}-linux-x86_64.tar.gz"
+        sh "tar -xzf logstash-${LOGSTASH_VERSION}-linux-x86_64.tar.gz"
         env.PATH = "${pwd()}/logstash-${LOGSTASH_VERSION}/bin:${env.PATH}"
     }
 
-    stage('Test') {
-        sh "cd tests && python runtest.py"
+    stage('test') {
+        sh 'python2.7 -V'
+        sh 'pip3 install --ignore-installed --user tox'
+        sh 'export PATH=$HOME/.local/bin:$PATH && tox -v -c tox.ini'
     }
 }
