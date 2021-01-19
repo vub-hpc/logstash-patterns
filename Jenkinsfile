@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-def LOGSTASH_VERSION = "7.10.1"
+def LOGSTASH_VERSION = "7.10.2"
 
 node {
     stage('checkout git') {
