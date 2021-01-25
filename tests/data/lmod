@@ -135,4 +135,18 @@ data = [
         "cluster": "test",
     }
 },
+{
+    "raw": "<13>1 2021-01-25T18:30:28.781669+01:00 login2 lmod: - lmod:  username=vsc10042, cluster=hydra, arch=skylake, jobid=, userload=yes, module=GMP/6.2.0-GCCcore-10.2.0, fn=/apps/brussel/CO7/skylake/modules/2020b/all/GMP/6.2.0-GCCcore-10.2.0.lua",
+    "expected": {
+        "@source_host": "login2",
+        "program": "lmod",
+        "username": "vsc10042",
+        "userload": "yes",
+        "module_name": "GMP",
+        "module_version": "6.2.0-GCCcore-10.2.0",
+        "module_path": "/apps/brussel/CO7/skylake/modules/2020b/all/GMP/6.2.0-GCCcore-10.2.0.lua",
+        "arch": "skylake",
+        "cluster": "hydra",
+    }
+},
 ]
