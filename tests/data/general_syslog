@@ -13,6 +13,12 @@ data = [
         "expected": {
             "@message": "yup, producing a pan galactic gargle blaster"
         }
-    }
-
+    },
+    {
+        "raw": "<14>1 2021-01-26T09:46:44.077751+01:00 node154  - :  pbsmomcleanup.Prologue: INFO 0003678695 End cleanup",
+        "expected": {
+            "@source_host": "node154",
+            "@message": "pbsmomcleanup.Prologue: INFO 0003678695 End cleanup",
+        }
+    },
 ]
