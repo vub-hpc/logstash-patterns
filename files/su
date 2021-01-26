@@ -1,0 +1,1 @@
+SU_MSG (?:(?<su_message>FAILED) SU )?\(to %{NOTSPACE:su_to}\) %{NOTSPACE:su_user} on %{NOTSPACE:su_tty}
