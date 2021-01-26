@@ -59,7 +59,6 @@ data = [
             "program": "reframe",
             "ref": 11.0,
             "@source_host": "node381",
-            "syslog_tag": "reframe:",
             "system": "hydra",
             "tags": "prod_small",
             "unit": "us",
