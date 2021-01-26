@@ -2,6 +2,6 @@
 RSYSLOGMESSAGE (?:%{GREEDYDATA:syslog_message})
 
 # Do not modify when only adding new
-RSYSLOGCUSTOMHEADER (?:(?:<%{NONNEGINT:syslog_abspri}>(?:%{NONNEGINT:syslog_version} )?)?(?<syslog_timestamp>%{TIMESTAMP_ISO8601:}|%{SYSLOGTIMESTAMP}))
-RSYSLOGPREFIX %{RSYSLOGCUSTOMHEADER} %{IPORHOST:syslog_hostname} (?:%{DATA:syslog_tag} - %{PROG2:program}(?:\[%{POSINT:pid}\])?:*|%{SYSLOGPROG}):\s+
+RSYSLOGCUSTOMHEADER (?:(?:<%{NONNEGINT:syslog_abspri}>(?:%{NONNEGINT:syslog_version} )?)?(?<syslog_timestamp>%{TIMESTAMP_ISO8601}|%{SYSLOGTIMESTAMP}))
+RSYSLOGPREFIX %{RSYSLOGCUSTOMHEADER} %{IPORHOST:syslog_hostname} (?:%{DATA:syslog_tag}? - (?:%{PROG2:program}(?:\[%{POSINT:pid}\])?)?:*|%{SYSLOGPROG}):\s+
 RSYSLOGCUSTOM %{RSYSLOGPREFIX}%{RSYSLOGMESSAGE}
