@@ -1,0 +1,36 @@
+data = [
+    {
+        "raw": "<86>1 2021-01-26T09:17:43.755343+01:00 globus03 sudo: - sudo:  pam_unix(sudo:session): session closed for user root",
+        "expected": {
+            "@source_host": "globus03",
+            "program": "sudo",
+            "sudo_message": "session closed",
+            "sudo_runas": "root",
+        },
+    },
+    {
+        "raw": "<85>1 2021-01-25T18:35:08.896261+01:00 master01 sudo: - sudo:      ward : TTY=pts/0 ; PWD=/home/ward ; USER=root ; COMMAND=/usr/bin/su -",
+        "expected": {
+            "@source_host": "master01",
+            "program": "sudo",
+            "sudo_pwd": "/home/ward",
+            "sudo_runas": "root",
+            "sudo_tty": "pts/0",
+            "sudo_user": "ward",
+            "sudo_command": "/usr/bin/su -",
+        },
+    },
+    {
+        "raw": "<81>1 2021-01-26T09:19:45.628752+01:00 login1 sudo: - sudo:  vsc10042 : user NOT in sudoers ; TTY=pts/4 ; PWD=/theia/home/brussel/100/vsc10042 ; USER=root ; COMMAND=/usr/bin/ls",
+        "expected": {
+            "@source_host": "login1",
+            "program": "sudo",
+            "sudo_pwd": "/theia/home/brussel/100/vsc10042",
+            "sudo_runas": "root",
+            "sudo_tty": "pts/4",
+            "sudo_user": "vsc10042",
+            "sudo_message": "user NOT in sudoers",
+            "sudo_command": "/usr/bin/ls",
+        },
+    },
+]
