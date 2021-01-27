@@ -7,4 +7,27 @@ data = [
         '@source_host': 'node2131',
     }
 },
+{
+    "raw": "<37>1 2021-01-26T16:38:51.933017+01:00 login2 su: - su:  FAILED SU (to root) vsc10042 on pts/5",
+    "expected": {
+        'program': 'su',
+        'appname': 'su',
+        '@source_host': 'login2',
+        'su_user': 'vsc10042',
+        'su_tty': 'pts/5',
+        'su_to': 'root',
+        'su_message': 'FAILED',
+    }
+},
+{
+    "raw": "<37>1 2021-01-26T16:57:06.663454+01:00 node306 su: - su:  (to vsc10009) root on none",
+    "expected": {
+        'program': 'su',
+        'appname': 'su',
+        '@source_host': 'node306',
+        'su_user': 'root',
+        'su_tty': 'none',
+        'su_to': 'vsc10009',
+    }
+},
 ]

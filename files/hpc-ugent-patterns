@@ -1,1 +1,4 @@
 USERNAME_PAT %{USERNAME:username}
+
+# same like PROG but without :
+PROG2 [\x21-\x39\x3b-\x5a\x5c\x5e-\x7e]+

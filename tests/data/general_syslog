@@ -21,4 +21,13 @@ data = [
             "@message": "pbsmomcleanup.Prologue: INFO 0003678695 End cleanup",
         }
     },
+    {
+        "raw": "<30>1 2021-01-26T16:35:41.022277+01:00 login3 python2[7245]: - python2:  2021-01-26 16:35:41,020 INFO ",
+        "expected": {
+            "@source_host": "login3",
+            "appname": "python2",
+            "program": "python2",
+            "pid": "7245",
+        }
+    },
 ]

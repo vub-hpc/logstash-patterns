@@ -44,6 +44,14 @@ data = [
 },
 
 {
+    "raw": "<86>1 2021-01-26T15:10:37.325301+01:00 login2 sshd[74863]: - sshd:  Disconnected from 94.224.219.173 port 49948",
+    "expected" : {
+        'ip': '94.224.219.173',
+        'program': 'sshd',
+    },
+},
+
+{
     "raw": "<86>Apr 26 11:22:40 gligar03 sshd[9697]: subsystem request for sftp",
     "expected" : {
         'program': 'sshd',
