@@ -3,7 +3,8 @@ data = [
     "raw": "<86>1 2015-12-22T10:49:47.644749+01:00 node2131 su: - su::  pam_unix(su-l:session): session closed for user vsc40035",
     "expected": {
         'program': 'su',
-        '@message': 'pam_unix(su-l:session): session closed for user vsc40035',
+        'su_message': 'session closed',
+        'su_user': 'vsc40035',
         '@source_host': 'node2131',
     }
 },
@@ -28,6 +29,34 @@ data = [
         'su_user': 'root',
         'su_tty': 'none',
         'su_to': 'vsc10009',
+    }
+},
+{
+    "raw": "<86>1 2021-02-05T10:39:47.304534+01:00 node051 su: - su: pam_unix(su-l:session): session opened for user root by ward(uid=0)",
+    "expected": {
+        'program': 'su',
+        '@source_host': 'node051',
+        'su_message': 'session opened',
+        'su_user': 'root',
+        'username': 'ward',
+    }
+},
+{
+    "raw": "<86>1 2021-02-05T10:39:47.304534+01:00 node051 su: - su: pam_unix(su-l:session): session closed for user ward",
+    "expected": {
+        'program': 'su',
+        '@source_host': 'node051',
+        'su_message': 'session closed',
+        'su_user': 'ward',
+    }
+},
+{
+    "raw": "<86>1 2021-02-05T10:39:47.304534+01:00 node051 su: - su: pam_unix(su:session): session opened for user vsc43020 by (uid=0)",
+    "expected": {
+        'program': 'su',
+        '@source_host': 'node051',
+        'su_message': 'session opened',
+        'su_user': 'vsc43020',
     }
 },
 ]
