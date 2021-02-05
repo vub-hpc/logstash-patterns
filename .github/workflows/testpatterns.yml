@@ -18,6 +18,8 @@ jobs:
         run: sudo apt-get install logstash
       - name: add logstash to path
         run: echo "/usr/share/logstash/bin" >> $GITHUB_PATH
+      - name: fix directory permissions of logstash data directory
+        run: sudo chmod 777 /usr/share/logstash/data
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Set up Python ${{ matrix.python-version }}
