@@ -13,7 +13,7 @@ data = [
             "perf_var": "bandwidth",
             "program": "reframe",
             "ref": 11500.0,
-            "@source_host": "node381",
+            "@source_host": "node113",
             "system": "hydra",
             "tags": "prod_small",
             "@timestamp": "2021-01-18T03:59:09.645Z",
