@@ -25,7 +25,7 @@ data = [
     "expected" : {
         'method': 'publickey',
         'pid': '44668',
-        'port': '43493',
+        'port': 43493,
         'program': 'sshd',
         'status': 'Accepted',
         'syslog_abspri': '86',
@@ -107,7 +107,7 @@ data = [
     "expected" : {
         'method': 'publickey',
         'pid': '8245',
-        'port': '55141',
+        'port': 55141,
         'program': 'sshd',
         'status': 'Accepted',
         'syslog_abspri': '86',
@@ -130,6 +130,21 @@ data = [
         'sshsession': 'opened',
         'syslog_abspri': '86',
         'username': 'oneadmin',
+    }
+},
+{
+    "raw": "<86>1 2021-02-08T21:04:11.450531+01:00 login2 sshd[35227]: Accepted publickey for vsc10001 from 109.136.238.10 port 57465 ssh2: RSA SHA256:cz3lwY9mjGfznACfU23BOSY0iYjFFgnp1exj1ijBfQA",
+    "expected": {
+        'program': 'sshd',
+        'syslog_abspri': '86',
+        'username': 'vsc10001',
+        '@source_host': 'login2',
+        'method': 'publickey',
+        'port': 57465,
+        'status': 'Accepted',
+        'ssh_key_type': 'RSA',
+        'ssh_key_fingerprint': 'SHA256:cz3lwY9mjGfznACfU23BOSY0iYjFFgnp1exj1ijBfQA',
+        'ip': '109.136.238.10',
     }
 },
 ]
