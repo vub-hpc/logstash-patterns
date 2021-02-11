@@ -1,5 +1,5 @@
 SU_FAIL (?:(?<su_message>FAILED) SU )?\(to %{NOTSPACE:su_to}\) %{NOTSPACE:su_user} on %{NOTSPACE:su_tty}
 
-SU_SESSIONS pam_unix\(su(?:-l)?:session\): (?<su_message>session (?:opened|closed)) for user %{NOTSPACE:su_user}(?: by %{USERNAME_PAT}\(uid=%{NUMBER}\))?
+SU_SESSIONS pam_unix\(su(?:-l)?:session\): (?<su_message>session (?:opened|closed)) for user %{NOTSPACE:su_user}(?: by (?:%{USERNAME_PAT})?\(uid=%{NUMBER}\))?
 
 SU_MSG %{SU_FAIL}|%{SU_SESSIONS}
