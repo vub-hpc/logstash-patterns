@@ -21,8 +21,8 @@ data = [
            "fwsrc" : "10.0.0.2",
            "fwdst" : "10.0.0.1",
            "fwproto" : "UDP",
-           u"fwspt" : u"57002",
-           u"fwdpt" : u"53",
+           u"fwspt" : 57002,
+           u"fwdpt" : 53,
     }
 },
 {
@@ -37,6 +37,20 @@ data = [
            "fwproto" : "TCP",
            "fwspt" : 60048,
            "fwdpt" : 22,
+    }
+},
+{
+    "raw" : "<6>1 2021-02-11T10:06:22.340438+01:00 cerberus kernel: Shorewall:all-all:REJECT:IN=em3 OUT=p2p1 MAC=24:6e:96:78:50:02:94:57:a5:60:53:fb:08:00 SRC=10.148.12.200 DST=134.184.15.95 LEN=84 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=ICMP TYPE=8 CODE=0 ID=27802 SEQ=0",
+    "expected" : {
+           "fwrule" : "all-all",
+           "fwtarget" : "REJECT",
+           "fwin" : "em3",
+           "fwproto" : "ICMP",
+           "icmp_code": 0,
+           "icmp_type": 8,
+           "fwsrc": "10.148.12.200",
+           "fwdst": "134.184.15.95",
+           "fwmac": "24:6e:96:78:50:02:94:57:a5:60:53:fb:08:00",
     }
 },
 ]
