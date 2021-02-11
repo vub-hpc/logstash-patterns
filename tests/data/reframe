@@ -49,4 +49,27 @@ data = [
             "commit": "0895565",
         },
     },
+    #without optional fields num_tasks_per_node and commit:
+    {
+        "raw": "<12>1 2021-01-18T03:01:50.858776+01:00 node381 reframe: - reframe:  username=vsc10001|version=3.0|name=OSULatencyTest|system=hydra|partition=skylake-mpi|environ=foss-2020a|num_tasks=2|tags=prod_small|jobid=3676117.master01.hydra.brussel.vsc|perf_var=latency|perf_value=10.39|ref=11.0|lower=-1|upper=0.1|unit=us",
+        "expected": {
+            "environ": "foss-2020a",
+            "jobid": "3676117.master01.hydra.brussel.vsc",
+            "lower": -1.0,
+            "name": "OSULatencyTest",
+            "num_tasks": 2,
+            "partition": "skylake-mpi",
+            "perf_value": 10.39,
+            "perf_var": "latency",
+            "program": "reframe",
+            "ref": 11.0,
+            "@source_host": "node381",
+            "system": "hydra",
+            "tags": "prod_small",
+            "unit": "us",
+            "upper": 0.1,
+            "username": "vsc10001",
+            "version": "3.0",
+        },
+    },
 ]
