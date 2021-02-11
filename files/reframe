@@ -1,3 +1,3 @@
-REFRAME_GENERAL username=%{USERNAME_PAT}\|version=%{DATA:version}\|name=%{DATA:name}\|system=%{DATA:system}\|partition=%{DATA:partition}\|environ=%{DATA:environ}\|num_tasks=%{INT:num_tasks:int}\|tags=%{DATA:tags}\|jobid=%{DATA:jobid}
+REFRAME_GENERAL username=%{USERNAME_PAT}\|version=%{DATA:version}\|(?:commit=%{DATA:commit}\|)?name=%{DATA:name}\|system=%{DATA:system}\|partition=%{DATA:partition}\|environ=%{DATA:environ}\|num_tasks=%{INT:num_tasks:int}\|(?:num_tasks_per_node=%{INT:num_tasks_per_node:int}\|)?tags=%{DATA:tags}\|jobid=%{DATA:jobid}
 REFRAME_PERF perf_var=%{DATA:perf_var}\|perf_value=%{NUMBER:perf_value:float}\|ref=%{NUMBER:ref:float}\|lower=%{NUMBER:lower:float}\|upper=%{NUMBER:upper:float}\|unit=%{GREEDYDATA:unit}
 REFRAME_MSG %{REFRAME_GENERAL}\|%{REFRAME_PERF}
