@@ -14,12 +14,10 @@ data = [
             "program": "reframe",
             "@source_host": "login1",
             "system": "hydra",
-            "modules": "",
             "@timestamp": "2021-12-23T14:20:18.050Z",
             "unit": "MB/s",
             "username": "vsc10009",
             "version": "3.9.1",
-            "commit": "",
         },
     },
     {
