@@ -33,4 +33,16 @@ data = [
             "sudo_command": "/usr/bin/ls",
         },
     },
+    {
+        "raw": "<85>Oct 10 11:52:35 C4STO01-Node2 sudo[3984032]:  ha_omm : TTY=unknown ; PWD=/opt/dfv/oam/oam-u/ha/ha/module/hacom/bin ; USER=root ; COMMAND=../../../module/harm/plugin/script/harm_mgr.sh floatIP.sh status active key1=value1; 0 ha2",
+        "expected": {
+            "@source_host": "C4STO01-Node2",
+            "program": "sudo",
+            "sudo_pwd": "/opt/dfv/oam/oam-u/ha/ha/module/hacom/bin",
+            "sudo_runas": "root",
+            "sudo_tty": "unknown",
+            "sudo_user": "ha_omm",
+            "sudo_command": "../../../module/harm/plugin/script/harm_mgr.sh floatIP.sh status active key1=value1; 0 ha2",
+        },
+    },
 ]

@@ -68,4 +68,14 @@ data = [
         'su_user': 'vsc43020',
     }
 },
+{
+    "raw": "<37>Oct 10 11:52:35 C4STO01-Node2 su[3984121]: (to storage) root on none",
+    "expected": {
+        'program': 'su',
+        '@source_host': 'C4STO01-Node2',
+        'su_user': 'root',
+        'su_tty': 'none',
+        'su_to': 'storage',
+    }
+},
 ]
