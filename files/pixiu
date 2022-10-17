@@ -1,1 +1,3 @@
-PIXIUBASH \s*%{IPORHOST:syslog_hostname} \[%{PROG:program}\]: \[%{YEAR}-%{MONTHNUM}-%{MONTHDAY} %{HOUR}:%{MINUTE}:%{SECOND} %{USERNAME} %{GREEDYDATA:command}\] return code=\[%{INT:return_code:int}\], execute (success|failed) by \[%{USERNAME:username}\(uid=%{INT:uid:int}\)\] from \[%{DATA:terminal} \(%{IPORHOST:source_ip}\)\]
+PIXIU_BASH \s*%{IPORHOST:syslog_hostname} \[%{PROG:program}\]: \[%{YEAR}-%{MONTHNUM}-%{MONTHDAY} %{HOUR}:%{MINUTE}:%{SECOND} %{USERNAME} %{GREEDYDATA:command}\] return code=\[%{INT:return_code:int}\], execute (success|failed) by \[%{USERNAME:username}\(uid=%{INT:uid:int}\)\] from \[%{DATA:terminal} \(%{IPORHOST:source_ip}\)\]
+
+PIXIU_APACHE \[%{HTTPDATE:timestamp}\] %{IPORHOST:clientip} %{HTTPDUSER:auth} %{WORD:verb} %{NOTSPACE:request} %{GREEDYDATA:other}

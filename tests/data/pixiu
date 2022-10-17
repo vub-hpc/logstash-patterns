@@ -6,6 +6,9 @@ data = [
         "expected": {
             "@source_host": "C4STO01-Node2",
             "program": "apache",
+            "clientip": "127.0.0.1",
+            "verb": "GET",
+            "request": "/api/v2/aa/current_session",
         },
     },
 
