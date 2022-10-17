@@ -1,0 +1,1 @@
+PIXIUBASH \s*%{IPORHOST:syslog_hostname} \[%{PROG:program}\]: \[%{YEAR}-%{MONTHNUM}-%{MONTHDAY} %{HOUR}:%{MINUTE}:%{SECOND} %{USERNAME} %{GREEDYDATA:command}\] return code=\[%{INT:return_code:int}\], execute (success|failed) by \[%{USERNAME:username}\(uid=%{INT:uid:int}\)\] from \[%{DATA:terminal} \(%{IPORHOST:source_ip}\)\]

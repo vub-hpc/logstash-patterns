@@ -1,0 +1,38 @@
+data = [
+#    LogFormat "%t %a %u %m %U %{User-Agent}i %{Referer}i %{X-Forwarded-For}i %{Content-Type}i %{Accept-Language}i %{Accept}i %{Accept-Encoding}i %>s %b %T" syslog
+
+    {
+        "raw": "<85>Oct 17 12:48:49 C4STO01-Node2 apache[3984033]: [17/Oct/2022:12:48:49 +0200] 127.0.0.1 - GET /api/v2/aa/current_session curl/7.69.1 - - - - */* - 200 201 0",
+        "expected": {
+            "@source_host": "C4STO01-Node2",
+            "program": "apache",
+        },
+    },
+
+#    log_format  main  '$remote_addr - $log_remote_user  [$time_local] "$log_request" $status "$request_time" '
+#                      '$body_bytes_sent "$log_http_referer" "$log_http_user_agent" "$log_http_x_forwarded_for" '
+#                      '$upstream_addr $upstream_status "$upstream_response_time" '
+#                      '"$log_x_auth_token" "$log_x_csrf_token" "$log_cookie_x_auth_token" "$x_real_ip" '
+#                      '"$log_content_type" "$log_http_accept_language" "$log_http_accept" "$log_http_accept_encoding" ';
+
+#    {
+#        "raw": '<174>Oct 17 12:50:42 HKSTO03-Node1 nginx 127.0.0.1 - -  [17/Oct/2022:12:50:42 +0200] "GET /dsware/service/cluster/storagepool/query*** HTTP/1.1" 200 "0.062" 924 "-" "Apache-HttpClient/5.1 (Java/1.8.0_322)" "-" 127.0.0.1:9527 200 "0.064" "********" "********" "********" "127.0.0.1" "application/json;charset=UTF-8" "-" "-" "gzip, x-gzip, deflate"',
+#        "expected": {
+#            "@source_host": "HKSTO03-Node1",
+#            "program": "nginx",
+#        },
+#    },
+    {
+        "raw": "<174>Oct 17 13:05:07 C4STO01-Node2 [/bin/bash]: [2022-10-17 13:05:07 root cat httpd.conf] return code=[0], execute success by [root(uid=0)] from [pts/0 (172.18.124.57)]",
+        "expected": {
+            "@source_host": "C4STO01-Node2",
+            "program": "/bin/bash",
+            "username": "root",
+            "command": "cat httpd.conf",
+            "return_code": 0,
+            "uid": 0,
+            "source_ip": "172.18.124.57",
+            "terminal": "pts/0",
+        },
+    },
+]
