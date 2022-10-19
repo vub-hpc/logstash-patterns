@@ -1,0 +1,7 @@
+PIXIU_BASH \s*%{IPORHOST:syslog_hostname} \[%{PROG:program}\]: \[%{YEAR}-%{MONTHNUM}-%{MONTHDAY} %{HOUR}:%{MINUTE}:%{SECOND} %{USERNAME} %{GREEDYDATA:command}\] return code=\[%{INT:return_code:int}\], execute (success|failed) by \[%{USERNAME:username}\(uid=%{INT:uid:int}\)\] from \[%{DATA:terminal} \(%{IPORHOST:source_ip}\)\]
+
+PIXIU_APACHE \[%{HTTPDATE:timestamp}\] %{IPORHOST:clientip} %{HTTPDUSER:auth} %{WORD:verb} %{NOTSPACE:request} %{GREEDYDATA:other}
+
+PIXIU_NGINX \s*%{IPORHOST:syslog_hostname} %{SYSLOGPROG} %{IPORHOST:clientip} - %{HTTPDUSER:auth}\s+\[%{HTTPDATE:timestamp}\] \"%{WORD:verb} %{NOTSPACE:request} HTTP/%{NUMBER:httpversion}\" %{NUMBER:response:int} %{GREEDYDATA:other}
+
+PIXIU_TOMCAT \s*%{IPORHOST:syslog_hostname} %{SYSLOGPROG} \[%{HTTPDATE:timestamp}\]\^%{IPORHOST:clientip}\^%{HTTPDUSER:auth}\^%{WORD:verb} %{NOTSPACE:request} HTTP/%{NUMBER:httpversion}\^%{GREEDYDATA:other}
