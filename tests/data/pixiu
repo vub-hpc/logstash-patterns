@@ -95,7 +95,40 @@ data = [
             "quota_limit": 40000,
         },
     },
+    {
+        "raw": "<187>Aug 20 20:18:25 C4STO01-Node1 alarm[2613490]: <186>2023-08-20 20:18:25 DST 172.19.104.10 OceanStor-Distributed-Storage     259068 0xFEA6A000E Major(1): The used files (1501) of quota (type directory quota) of dtree (name test1, ID 4101) in namespace (name admin, ID 71) reaches to the file quantity soft quota of (1000).",
+        "expected": {
+            "@source_host": "C4STO01-Node1",
+            "program": "alarm",
+            "alarm_severity": "Major",
+            "alarm_object": "OceanStor-Distributed-Storage",
+            "alarm_id": "0xFEA6A000E",
+            "used_files": 1501,
+            "quota_type": "directory",
+            "dtree": "test1",
+            "dtree_id": 4101,
+            "namespace": "admin",
+            "namespace_id": 71,
+            "quota_limit_type": "soft",
+            "quota_limit": 1000,
+        },
+    },
+    {
+        "raw": "<187>Aug 20 20:16:52 C4STO01-Node1 alarm[2613490]: <186>2023-08-20 20:16:50 DST 172.19.104.10 OceanStor-Distributed-Storage     259067 0xFEA6A000B Major(1): The used files (2000) of quota (type directory quota) of dtree (name test1, ID 4101) in namespace (name admin, ID 71) reaches or approaches to the file quantity hard quota of (2000). Data will fail to be written.",
+        "expected": {
+            "@source_host": "C4STO01-Node1",
+            "program": "alarm",
+            "alarm_severity": "Major",
+            "alarm_object": "OceanStor-Distributed-Storage",
+            "alarm_id": "0xFEA6A000B",
+            "used_files": 2000,
+            "quota_type": "directory",
+            "dtree": "test1",
+            "dtree_id": 4101,
+            "namespace": "admin",
+            "namespace_id": 71,
+            "quota_limit_type": "hard",
+            "quota_limit": 2000,
+        },
+    },
 ]
-
-# <187>Aug 20 20:18:25 C4STO01-Node1 alarm[2613490]: <186>2023-08-20 20:18:25 DST 172.19.104.10 OceanStor-Distributed-Storage     259068 0xFEA6A000E Major(1): The used files (1501) of quota (type directory quota) of dtree (name test1, ID 4101) in namespace (name admin, ID 71) reaches to the file quantity soft quota of (1000).
-# <187>Aug 20 20:16:52 C4STO01-Node1 alarm[2613490]: <186>2023-08-20 20:16:50 DST 172.19.104.10 OceanStor-Distributed-Storage     259067 0xFEA6A000B Major(1): The used files (2000) of quota (type directory quota) of dtree (name test1, ID 4101) in namespace (name admin, ID 71) reaches or approaches to the file quantity hard quota of (2000). Data will fail to be written.
