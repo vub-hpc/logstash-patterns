@@ -10,8 +10,8 @@ PIXIU_ALARM_PREFIX \s*%{IPORHOST:syslog_hostname} %{SYSLOGPROG}: .+%{IPORHOST} (
 
 PIXIU_ALARM_USER_TYPE user name, owner name %{USERNAME:username}
 
-PIXIU_USER_SOFT_INODE_ALARM %{PIXIU_ALARM_PREFIX} The used files \((?<used_files>%{NUMBER:int})\) of (?:the )?quota \(type (?<quota_type>%{WORD}) quota(?:, %{PIXIU_ALARM_USER_TYPE})?\) of dtree \(name (?<dtree>%{WORD}), ID (?<dtree_id>%{NUMBER:int})\) in namespace \(name (?<namespace>%{WORD}), ID (?<namespace_id>%{NUMBER:int})\) reaches to the file quantity (?<quota_limit_type>soft) quota of \((?<quota_limit>%{NUMBER:int})\).
+PIXIU_ALARM_COMMON The used files \((?<used_files>%{NUMBER:int})\) of (?:the )?quota \(type (?<quota_type>%{WORD}) quota(?:, %{PIXIU_ALARM_USER_TYPE})?\) of dtree \(name (?<dtree>%{WORD}), ID (?<dtree_id>%{NUMBER:int})\) in namespace \(name (?<namespace>%{WORD}), ID (?<namespace_id>%{NUMBER:int})\)
 
-PIXIU_USER_HARD_INODE_ALARM %{PIXIU_ALARM_PREFIX} The used files \((?<used_files>%{NUMBER:int})\) of (?:the )?quota \(type (?<quota_type>%{WORD}) quota(?:, %{PIXIU_ALARM_USER_TYPE})?\) of dtree \(name (?<dtree>%{WORD}), ID (?<dtree_id>%{NUMBER:int})\) in namespace \(name (?<namespace>%{WORD}), ID (?<namespace_id>%{NUMBER:int})\) reaches or approaches to the (:?(?<quota_limit_type>%{WORD}) file quantity quota of|file quantity (?<quota_limit_type>%{WORD}) quota of) \((?<quota_limit>%{NUMBER:int})\).
+PIXIU_USER_INODE_ALARM %{PIXIU_ALARM_PREFIX} %{PIXIU_ALARM_COMMON} reaches (?:or approaches )?to the (:?(?<quota_limit_type>%{WORD}) file quantity quota of|file quantity (?<quota_limit_type>%{WORD}) quota of) \((?<quota_limit>%{NUMBER:int})\).
 
-PIXIU_ALARM %{PIXIU_USER_SOFT_INODE_ALARM}|%{PIXIU_USER_HARD_INODE_ALARM}
+PIXIU_ALARM %{PIXIU_USER_INODE_ALARM}
