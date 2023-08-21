@@ -8,8 +8,8 @@ jobs:
       - name: add logstash repo
         uses: myci-actions/add-deb-repo@4
         with:
-            repo: deb https://artifacts.elastic.co/packages/7.x/apt stable main
-            repo-name: elastic-7.x
+            repo: deb https://artifacts.elastic.co/packages/8.x/apt stable main
+            repo-name: elastic-8.x
             keys: D27D666CD88E42B4
       - name: install logstash
         run: sudo apt-get install logstash
