@@ -49,4 +49,53 @@ data = [
             "request": "/dsware/service/noAuth/managerStatus",
         },
     },
+    {
+        "raw": "<166>Oct 21 11:32:53 C4STO01-Node2 libstorage-iostat-enable[1965645]: /home/abuild/rpmbuild/BUILD/ublock-1.0/src/ublock_rpc.c:1420:ublock_get_sockaddr_shm: *ERROR*: [ublock] shm_open failed: Permission denied",
+        "expected": {
+            "@source_host": "C4STO01-Node2",
+            "program": "libstorage-iostat-enable",
+            "pid": "1965645",
+        },
+    },
+    {
+        "raw": "<187>Jul 19 14:22:39 C4STO01-Node1 alarm[2613490]: <186>2023-07-19 14:11:57 DST 2023-07-19 14:22:37 DST 172.19.104.10 OceanStor-Distributed-Storage     216045 0xFEA6A000F Major(2): The used files (39293) of quota (type user quota, user name, owner name vsc10800) of dtree (name 108, ID 4137) in namespace (name data, ID 69) reaches to the file quantity soft quota of (38095).",
+        "expected": {
+            "@source_host": "C4STO01-Node1",
+            "program": "alarm",
+            "alarm_severity": "Major",
+            "alarm_object": "OceanStor-Distributed-Storage",
+            "alarm_id": "0xFEA6A000F",
+            "used_files": 39293,
+            "username": "vsc10800",
+            "quota_type": "user",
+            "dtree": "108",
+            "dtree_id": 4137,
+            "namespace": "data",
+            "namespace_id": 69,
+            "quota_limit_type": "soft",
+            "quota_limit": 38095,
+        },
+    },
+    {
+        "raw": "<187>Jul 19 14:22:39 C4STO01-Node1 alarm[2613490]: <186>2023-07-19 14:06:48 DST 2023-07-19 14:22:37 DST 172.19.104.10 OceanStor-Distributed-Storage     216042 0xFEA6A0011 Major(2): The used files (40000) of the quota (type user quota, user name, owner name vsc10800) of dtree (name 108, ID 4137) in namespace (name data, ID 69) reaches or approaches to the hard file quantity quota of (40000). The user or user group will fail to write data.",
+        "expected": {
+            "@source_host": "C4STO01-Node1",
+            "program": "alarm",
+            "alarm_severity": "Major",
+            "alarm_object": "OceanStor-Distributed-Storage",
+            "alarm_id": "0xFEA6A0011",
+            "used_files": 40000,
+            "username": "vsc10800",
+            "quota_type": "user",
+            "dtree": "108",
+            "dtree_id": 4137,
+            "namespace": "data",
+            "namespace_id": 69,
+            "quota_limit_type": "hard",
+            "quota_limit": 40000,
+        },
+    },
 ]
+
+# <187>Aug 20 20:18:25 C4STO01-Node1 alarm[2613490]: <186>2023-08-20 20:18:25 DST 172.19.104.10 OceanStor-Distributed-Storage     259068 0xFEA6A000E Major(1): The used files (1501) of quota (type directory quota) of dtree (name test1, ID 4101) in namespace (name admin, ID 71) reaches to the file quantity soft quota of (1000).
+# <187>Aug 20 20:16:52 C4STO01-Node1 alarm[2613490]: <186>2023-08-20 20:16:50 DST 172.19.104.10 OceanStor-Distributed-Storage     259067 0xFEA6A000B Major(1): The used files (2000) of quota (type directory quota) of dtree (name test1, ID 4101) in namespace (name admin, ID 71) reaches or approaches to the file quantity hard quota of (2000). Data will fail to be written.
