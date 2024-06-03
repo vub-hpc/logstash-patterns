@@ -6,7 +6,7 @@ PIXIU_NGINX \s*%{IPORHOST:syslog_hostname} %{SYSLOGPROG} %{IPORHOST:clientip} - 
 
 PIXIU_TOMCAT \s*%{IPORHOST:syslog_hostname} %{SYSLOGPROG} \[%{HTTPDATE:timestamp}\]\^%{IPORHOST:clientip}\^%{HTTPDUSER:auth}\^%{WORD:verb} %{NOTSPACE:request} HTTP/%{NUMBER:httpversion}\^%{GREEDYDATA:other}
 
-PIXIU_ALARM_PREFIX \s*%{IPORHOST:syslog_hostname} %{SYSLOGPROG}: .+%{IPORHOST} (?<alarm_object>OceanStor-Distributed-Storage)\s+%{NUMBER} (?<alarm_id>0x[A-F0-9]+) (?<alarm_severity>Major).*:
+PIXIU_ALARM_PREFIX \s*%{IPORHOST:syslog_hostname} %{SYSLOGPROG}: .+%{IPORHOST} (?<alarm_object>OceanStor-Distributed-Storage)\s+%{NUMBER} (?<alarm_id>0x[A-F0-9]+) (?<alarm_severity>%{WORD}).*:
 
 PIXIU_ALARM_USER_TYPE user name, owner name %{USERNAME:username}
 
@@ -20,4 +20,8 @@ PIXIU_USER_INODE_ALARM %{PIXIU_ALARM_PREFIX} %{PIXIU_ALARM_COMMON} reaches (?:or
 
 PIXIU_USER_SPACE_ALARM %{PIXIU_ALARM_PREFIX} %{PIXIU_ALARM_COMMON} reaches (?:or approaches )?to the (:?(?<quota_limit_type>%{WORD}) space(?: quantity)? quota of|space(?: quantity)? (?<quota_limit_type>%{WORD}) quota of) \((?<quota_space_limit>%{PIXIU_BYTES})\).
 
-PIXIU_ALARM %{PIXIU_USER_INODE_ALARM}|%{PIXIU_USER_SPACE_ALARM}
+PIXIU_LOGIN_STATUS failed|succeeded
+
+PIXIU_LOGIN_ALARM %{PIXIU_ALARM_PREFIX} User \(user name %{USERNAME:username}\) %{PIXIU_LOGIN_STATUS:state} (?:to log in|in logging in) from source \(%{IPORHOST:source_ip}\)\..*
+
+PIXIU_ALARM %{PIXIU_USER_INODE_ALARM}|%{PIXIU_USER_SPACE_ALARM}|%{PIXIU_LOGIN_ALARM}
