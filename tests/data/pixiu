@@ -58,7 +58,7 @@ data = [
         },
     },
     {
-        "raw": "<187>Jul 19 14:22:39 C4STO01-Node1 alarm[2613490]: <186>2023-07-19 14:11:57 DST 2023-07-19 14:22:37 DST 172.19.104.10 OceanStor-Distributed-Storage     216045 0xFEA6A000F Major(2): The used files (39293) of quota (type user quota, user name, owner name vsc10800) of dtree (name 108, ID 4137) in namespace (name data, ID 69) reaches to the file quantity soft quota of (38095).",
+        "raw": "<187>Jul 19 14:22:39 C4STO01-Node1 alarm[2613490]: <186>2023-07-19 14:11:57 DST 2023-07-19 14:22:37 DST 172.19.104.10 OceanStor-Distributed-Storage     216045 0xFEA6A000F Major(2): The used files (39293) of quota (type user quota, user name, owner name vsc10800) of dtree (name 108, ID 4137) at /108 in namespace (name data, ID 69) reaches to the file quantity soft quota of (38095).",
         "expected": {
             "@source_host": "C4STO01-Node1",
             "program": "alarm",
@@ -75,10 +75,11 @@ data = [
             "namespace_id": 69,
             "quota_limit_type": "soft",
             "quota_files_limit": 38095,
+            "path": "/108",
         },
     },
     {
-        "raw": "<187>Jul 19 14:22:39 C4STO01-Node1 alarm[2613490]: <186>2023-07-19 14:06:48 DST 2023-07-19 14:22:37 DST 172.19.104.10 OceanStor-Distributed-Storage     216042 0xFEA6A0011 Major(2): The used files (40000) of the quota (type user quota, user name, owner name vsc10800) of dtree (name 108, ID 4137) in namespace (name data, ID 69) reaches or approaches to the hard file quantity quota of (40000). The user or user group will fail to write data.",
+        "raw": "<187>Jul 19 14:22:39 C4STO01-Node1 alarm[2613490]: <186>2023-07-19 14:06:48 DST 2023-07-19 14:22:37 DST 172.19.104.10 OceanStor-Distributed-Storage     216042 0xFEA6A0011 Major(2): The used files (40000) of the quota (type user quota, user name, owner name vsc10800) of dtree (name 108, ID 4137) at /108 in namespace (name data, ID 69) reaches or approaches to the hard file quantity quota of (40000). The user or user group will fail to write data.",
         "expected": {
             "@source_host": "C4STO01-Node1",
             "program": "alarm",
@@ -95,10 +96,11 @@ data = [
             "namespace_id": 69,
             "quota_limit_type": "hard",
             "quota_files_limit": 40000,
+            "path": "/108",
         },
     },
     {
-        "raw": "<187>Aug 20 20:18:25 C4STO01-Node1 alarm[2613490]: <186>2023-08-20 20:18:25 DST 172.19.104.10 OceanStor-Distributed-Storage     259068 0xFEA6A000E Major(1): The used files (1501) of quota (type directory quota) of dtree (name test1, ID 4101) in namespace (name admin, ID 71) reaches to the file quantity soft quota of (1000).",
+        "raw": "<187>Aug 20 20:18:25 C4STO01-Node1 alarm[2613490]: <186>2023-08-20 20:18:25 DST 172.19.104.10 OceanStor-Distributed-Storage     259068 0xFEA6A000E Major(1): The used files (1501) of quota (type directory quota) of dtree (name test1, ID 4101) at / in namespace (name admin, ID 71) reaches to the file quantity soft quota of (1000).",
         "expected": {
             "@source_host": "C4STO01-Node1",
             "program": "alarm",
@@ -114,10 +116,11 @@ data = [
             "namespace_id": 71,
             "quota_limit_type": "soft",
             "quota_files_limit": 1000,
+            "path": "/",
         },
     },
     {
-        "raw": "<187>Aug 20 20:16:52 C4STO01-Node1 alarm[2613490]: <186>2023-08-20 20:16:50 DST 172.19.104.10 OceanStor-Distributed-Storage     259067 0xFEA6A000B Major(1): The used files (2000) of quota (type directory quota) of dtree (name test1, ID 4101) in namespace (name admin, ID 71) reaches or approaches to the file quantity hard quota of (2000). Data will fail to be written.",
+        "raw": "<187>Aug 20 20:16:52 C4STO01-Node1 alarm[2613490]: <186>2023-08-20 20:16:50 DST 172.19.104.10 OceanStor-Distributed-Storage     259067 0xFEA6A000B Major(1): The used files (2000) of quota (type directory quota) of dtree (name test1, ID 4101) at / in namespace (name admin, ID 71) reaches or approaches to the file quantity hard quota of (2000). Data will fail to be written.",
         "expected": {
             "@source_host": "C4STO01-Node1",
             "program": "alarm",
@@ -133,10 +136,11 @@ data = [
             "namespace_id": 71,
             "quota_limit_type": "hard",
             "quota_files_limit": 2000,
+            "path": "/",
         },
     },
     {
-        "raw": "<187>Aug 21 09:56:38 C4STO01-Node1 alarm[2613490]: <186>2023-08-21 09:56:37 DST 172.19.104.10 OceanStor-Distributed-Storage     260204 0xFEA6A000B Major(1): The used space (1024MB) of quota (type directory quota) of dtree (name test1, ID 4101) in namespace (name admin, ID 71) reaches or approaches to the space hard quota of (1024MB). Data will fail to be written.",
+        "raw": "<187>Aug 21 09:56:38 C4STO01-Node1 alarm[2613490]: <186>2023-08-21 09:56:37 DST 172.19.104.10 OceanStor-Distributed-Storage     260204 0xFEA6A000B Major(1): The used space (1024MB) of quota (type directory quota) of dtree (name test1, ID 4101) at / in namespace (name admin, ID 71) reaches or approaches to the space hard quota of (1024MB). Data will fail to be written.",
         "expected": {
             "@source_host": "C4STO01-Node1",
             "program": "alarm",
@@ -152,10 +156,11 @@ data = [
             "namespace_id": 71,
             "quota_limit_type": "hard",
             "quota_space_limit": 1024000000,
+            "path": "/",
         },
     },
     {
-        "raw": "<187>Aug 20 19:40:26 C4STO01-Node1 alarm[2613490]: <186>2023-08-20 19:32:24 DST 2023-08-20 19:40:26 DST 172.19.104.10 OceanStor-Distributed-Storage     259045 0xFEA6A000F Major(2): The used space (6638MB) of quota (type user quota, user name, owner name vsc10042) of dtree (name 100, ID 8193) in namespace (name user, ID 70) reaches to the space soft quota of (6144MB).",
+        "raw": "<187>Aug 20 19:40:26 C4STO01-Node1 alarm[2613490]: <186>2023-08-20 19:32:24 DST 2023-08-20 19:40:26 DST 172.19.104.10 OceanStor-Distributed-Storage     259045 0xFEA6A000F Major(2): The used space (6638MB) of quota (type user quota, user name, owner name vsc10042) of dtree (name 100, ID 8193) at /100 in namespace (name user, ID 70) reaches to the space soft quota of (6144MB).",
         "expected": {
             "@source_host": "C4STO01-Node1",
             "program": "alarm",
@@ -172,6 +177,45 @@ data = [
             "namespace_id": 70,
             "quota_limit_type": "soft",
             "quota_space_limit": 6144000000,
+            "path": "/100",
+        },
+    },
+    {
+        "raw": "<190>Feb 27 12:04:21 HKSTO03-Node1 alarm[1266782]: <189>2024-02-27 12:04:21 172.19.96.130 OceanStor-Distributed-Storage     543842 0x200F002A0015 Informational(8): User (user name adm_wpoelmans) succeeded in logging in from source (172.18.124.113).",
+        "expected": {
+            "@source_host": "HKSTO03-Node1",
+            "program": "alarm",
+            "username": "adm_wpoelmans",
+            "source_ip": "172.18.124.113",
+            "state": "succeeded",
+        },
+    },
+    {
+        "raw": "<190>Feb 27 12:00:46 C4STO01-Node1 alarm[76472]: <189>2024-02-27 12:00:46 172.19.104.10 OceanStor-Distributed-Storage     753861 0x200F002A0015 Informational(8): User (user name admin) succeeded in logging in from source (172.18.124.113).",
+        "expected": {
+            "@source_host": "C4STO01-Node1",
+            "program": "alarm",
+            "username": "admin",
+            "source_ip": "172.18.124.113",
+            "state": "succeeded",
+        },
+    },
+    {
+        "raw": "<190>Feb 27 12:09:52 HKSTO03-Node1 alarm[1266782]: <189>2024-02-27 12:09:52 172.19.96.130 OceanStor-Distributed-Storage     543846 0x200F002A0016 Informational(8): User (user name bsdfsdf) failed to log in from source (172.18.124.113). Error code: 0x40403281.",
+        "expected": {
+            "@source_host": "HKSTO03-Node1",
+            "program": "alarm",
+            "username": "bsdfsdf",
+            "source_ip": "172.18.124.113",
+            "state": "failed",
+        },
+    },
+    {
+        "raw": "<187>May 30 00:20:05 C4STO01-Node1 alarm[4162768]: <186>2024-05-29 23:52:06 DST 2024-05-30 00:20:04 DST 172.19.104.10 OceanStor-Distributed-Storage     1105311 0xFEA6A0011 Major(2): The used files (20000) of the quota (type user quota, user name, owner name vsc10816) of dtree (name 108, ID 8200) at /108 in namespace (name user, ID 70) reaches or approaches to the hard file quantity quota of (20000). The user or user group will fail to write data.",
+        "expected": {
+            "program": "alarm",
+            "quota_used_type": "files",
+            "path": "/108",
         },
     },
 ]
