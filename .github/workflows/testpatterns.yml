@@ -10,7 +10,7 @@ jobs:
         with:
             repo: deb https://artifacts.elastic.co/packages/8.x/apt stable main
             repo-name: elastic-8.x
-            keys: D27D666CD88E42B4
+            keys-asc: https://artifacts.elastic.co/GPG-KEY-elasticsearch
       - name: install logstash
         run: sudo apt-get install logstash
       - name: add logstash to path
