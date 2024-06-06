@@ -21,7 +21,9 @@ PIXIU_USER_INODE_ALARM %{PIXIU_ALARM_PREFIX} %{PIXIU_ALARM_COMMON} reaches (?:or
 PIXIU_USER_SPACE_ALARM %{PIXIU_ALARM_PREFIX} %{PIXIU_ALARM_COMMON} reaches (?:or approaches )?to the (:?(?<quota_limit_type>%{WORD}) space(?: quantity)? quota of|space(?: quantity)? (?<quota_limit_type>%{WORD}) quota of) \((?<quota_space_limit>%{PIXIU_BYTES})\)\..*
 
 PIXIU_LOGIN_STATUS failed|succeeded
+PIXIU_LOGIN_ACTION in|out
 
-PIXIU_LOGIN_ALARM %{PIXIU_ALARM_PREFIX} User \(user name %{USERNAME:username}\) %{PIXIU_LOGIN_STATUS:state} (?:to log in|in logging in) from source \(%{IPORHOST:source_ip}\)\..*
+
+PIXIU_LOGIN_ALARM %{PIXIU_ALARM_PREFIX} User \(user name %{USERNAME:username}\) %{PIXIU_LOGIN_STATUS:state} (?:to log %{PIXIU_LOGIN_ACTION:action}|in logging %{PIXIU_LOGIN_ACTION:action})(?: upon timeout)? from source \(%{IPORHOST:source_ip}\)\..*
 
 PIXIU_ALARM %{PIXIU_USER_INODE_ALARM}|%{PIXIU_USER_SPACE_ALARM}|%{PIXIU_LOGIN_ALARM}

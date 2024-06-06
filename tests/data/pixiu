@@ -208,6 +208,7 @@ data = [
             "username": "bsdfsdf",
             "source_ip": "172.18.124.113",
             "state": "failed",
+            "action": "in",
         },
     },
     {
@@ -216,6 +217,33 @@ data = [
             "program": "alarm",
             "quota_used_type": "files",
             "path": "/108",
+        },
+    },
+    {
+        "raw": "<187>Jun  5 10:19:28 HKSTO03-Node1 alarm[2003199]: <186>2024-06-05 10:19:26 DST 172.19.96.130 OceanStor-Distributed-Storage     908704 0xFEA6A000E Major(1): The used space (18MB) of quota (type directory quota) of dtree (name --, ID 0) at / in namespace (name zzzzbucket, ID 242) reaches to the space soft quota of (15MB).",
+        "expected": {
+            "program": "alarm",
+            "quota_used_type": "directory",
+            "namespace": "zzzzbucket",
+            "namespace_id": 242,
+            "dtree": "--",
+            "dtree_id": 0,
+            "used_space": 18000000,
+            "quota_used_type": "space",
+            "quota_type": "directory",
+            "quota_limit_type": "soft",
+            "quota_space_limit": 15000000,
+            "path": "/",
+        },
+    },
+    {
+        "raw": "<190>Jun  5 11:19:57 C4STO01-Node1 alarm[4162768]: <189>2024-06-05 11:19:57 DST 172.19.104.10 OceanStor-Distributed-Storage     1140981 0x100F00C90022 Informational(9): User (user name adm_CV000080) succeeded in logging out upon timeout from source (172.18.252.67).",
+        "expected": {
+            "program": "alarm",
+            "username": "adm_CV000080",
+            "source_ip": "172.18.252.67",
+            "state": "succeeded",
+            "action": "out",
         },
     },
 ]
