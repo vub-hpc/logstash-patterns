@@ -16,9 +16,9 @@ PIXIU_QUOTA_SIZE_TYPE (?:(?<used_files>%{NUMBER:int})|(?<used_space>%{PIXIU_BYTE
 
 PIXIU_ALARM_COMMON The used (?<quota_used_type>%{WORD}) \(%{PIXIU_QUOTA_SIZE_TYPE}\) of (?:the )?quota \(type (?<quota_type>%{WORD}) quota(?:, %{PIXIU_ALARM_USER_TYPE})?\) of dtree \(name (?<dtree>%{NOTSPACE}), ID (?<dtree_id>%{NUMBER:int})\) at %{UNIXPATH:path} in namespace \(name (?<namespace>%{NOTSPACE}), ID (?<namespace_id>%{NUMBER:int})\)
 
-PIXIU_USER_INODE_ALARM %{PIXIU_ALARM_PREFIX} %{PIXIU_ALARM_COMMON} reaches (?:or approaches )?to the (:?(?<quota_limit_type>%{WORD}) (?:file|space) quantity quota of|(?:file|space) quantity (?<quota_limit_type>%{WORD}) quota of) \((?<quota_files_limit>%{NUMBER:int})\)\..*
+PIXIU_USER_INODE_ALARM %{PIXIU_ALARM_PREFIX} %{PIXIU_ALARM_COMMON} reaches (?:or approaches )?(?:to )?the (:?(?<quota_limit_type>%{WORD}) (?:file|space) quantity quota of|(?:file|space) quantity (?<quota_limit_type>%{WORD}) quota of) \((?<quota_files_limit>%{NUMBER:int})\).*
 
-PIXIU_USER_SPACE_ALARM %{PIXIU_ALARM_PREFIX} %{PIXIU_ALARM_COMMON} reaches (?:or approaches )?to the (:?(?<quota_limit_type>%{WORD}) space(?: quantity)? quota of|space(?: quantity)? (?<quota_limit_type>%{WORD}) quota of) \((?<quota_space_limit>%{PIXIU_BYTES})\)\..*
+PIXIU_USER_SPACE_ALARM %{PIXIU_ALARM_PREFIX} %{PIXIU_ALARM_COMMON} reaches (?:or approaches )?(?:to )?the (:?(?<quota_limit_type>%{WORD}) space(?: quantity)? quota of|space(?: quantity)? (?<quota_limit_type>%{WORD}) quota of) \((?<quota_space_limit>%{PIXIU_BYTES})\).*
 
 PIXIU_LOGIN_STATUS failed|succeeded
 PIXIU_LOGIN_ACTION in|out
