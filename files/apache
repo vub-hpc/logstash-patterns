@@ -1,0 +1,1 @@
+APACHE_MSG %{IPORHOST:clientip} %{HTTPDUSER:ident} %{USER:auth} \[%{HTTPDATE:timestamp}\] (?:%{NOTSPACE:ssl_protocol} )?(?:%{NOTSPACE:ssl_cipher} )?"(?:%{WORD:verb} %{NOTSPACE:request}(?: HTTP/%{NUMBER:httpversion})?|%{DATA:rawrequest})" %{NUMBER:response} (?:%{NUMBER:bytes}|-) %{QS:referrer} %{QS:agent}

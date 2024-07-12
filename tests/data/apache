@@ -1,0 +1,41 @@
+data = [
+{
+    "raw": '<14>1 2024-07-12T13:08:02.121560+02:00 aii01 httpd: hyp202.horus.os - - [12/Jul/2024:13:08:02 +0200] TLSv1.3 TLS_AES_256_GCM_SHA384 "GET /profiles/hyp202.horus.os.json.gz HTTP/1.1" 304 - "-" "libwww-perl/6.34"',
+    "expected": {
+        '@source_host': 'aii01',
+        'ssl_protocol': 'TLSv1.3',
+        'agent': '"libwww-perl/6.34"',
+        'auth': '-',
+        'clientip': 'hyp202.horus.os',
+        'ssl_cipher': 'TLS_AES_256_GCM_SHA384',
+        'httpversion': '1.1',
+        'ident': '-',
+        'program': 'httpd',
+        'referrer': '"-"',
+        'request': '/profiles/hyp202.horus.os.json.gz',
+        'response': '304',
+        'timestamp': '12/Jul/2024:13:08:02 +0200',
+        'verb': 'GET',
+    }
+},
+{
+    "raw": '2024-07-12T09:51:06.455130+02:00 aii01 httpd: 10.141.1.36 - - [12/Jul/2024:09:51:06 +0200] - - "GET /scripts/autorun0 HTTP/1.1" 200 1969 "-" "curl/7.61.1"',
+    "expected": {
+        '@source_host': 'aii01',
+        'ssl_protocol': '-',
+        'ssl_cipher': '-',
+        'agent': '"curl/7.61.1"',
+        'auth': '-',
+        'clientip': '10.141.1.36',
+        'httpversion': '1.1',
+        'ident': '-',
+        'program': 'httpd',
+        'referrer': '"-"',
+        'request': '/scripts/autorun0',
+        'response': '200',
+        'timestamp': '12/Jul/2024:09:51:06 +0200',
+        'bytes': '1969',
+        'verb': 'GET',
+    }
+},
+]
