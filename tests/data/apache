@@ -52,4 +52,17 @@ data = [
         "error_message": "verifyclientposthandshake",
     }
 },
+{
+    "raw": "<179>1 2024-07-16T10:42:21.320640+02:00 storctrl02 httpd: - httpd:  [Tue Jul 16 10:42:21.316462 2024] [ssl:info] [pid 2423674:tid 140063287461632] [client 10.127.15.3:50670] AH01964: Connection to child 151 established (server storctrl02.hpc.vub.be:443)",
+    "expected": {
+        "@source_host": "storctrl02",
+        "loglevel": "info",
+        "tid": "140063287461632",
+        "errorcode": "AH01964",
+        "module": "ssl",
+        "program" :"httpd",
+        "client": "10.127.15.3",
+        "error_message": "Connection to child 151 established (server storctrl02.hpc.vub.be:443)",
+    }
+},
 ]
