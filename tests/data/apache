@@ -1,0 +1,68 @@
+data = [
+{
+    "raw": '<14>1 2024-07-12T13:08:02.121560+02:00 aii01 httpd: hyp202.horus.os - - [12/Jul/2024:13:08:02 +0200] TLSv1.3 TLS_AES_256_GCM_SHA384 "GET /profiles/hyp202.horus.os.json.gz HTTP/1.1" 304 - "-" "libwww-perl/6.34"',
+    "expected": {
+        '@source_host': 'aii01',
+        'ssl_protocol': 'TLSv1.3',
+        'agent': '"libwww-perl/6.34"',
+        'auth': '-',
+        'clientip': 'hyp202.horus.os',
+        'ssl_cipher': 'TLS_AES_256_GCM_SHA384',
+        'httpversion': '1.1',
+        'ident': '-',
+        'program': 'httpd',
+        'referrer': '"-"',
+        'request': '/profiles/hyp202.horus.os.json.gz',
+        'response': '304',
+        'timestamp': '12/Jul/2024:13:08:02 +0200',
+        'verb': 'GET',
+    }
+},
+{
+    "raw": '2024-07-12T09:51:06.455130+02:00 aii01 httpd: 10.141.1.36 - - [12/Jul/2024:09:51:06 +0200] - - "GET /scripts/autorun0 HTTP/1.1" 200 1969 "-" "curl/7.61.1"',
+    "expected": {
+        '@source_host': 'aii01',
+        'ssl_protocol': '-',
+        'ssl_cipher': '-',
+        'agent': '"curl/7.61.1"',
+        'auth': '-',
+        'clientip': '10.141.1.36',
+        'httpversion': '1.1',
+        'ident': '-',
+        'program': 'httpd',
+        'referrer': '"-"',
+        'request': '/scripts/autorun0',
+        'response': '200',
+        'timestamp': '12/Jul/2024:09:51:06 +0200',
+        'bytes': '1969',
+        'verb': 'GET',
+    }
+},
+{
+    "raw": "2024-07-12T13:32:01.648735+02:00 aii01 httpd: [Fri Jul 12 13:32:01.648657 2024] [ssl:error] [pid 1162526:tid 139673653462784] [client 10.141.15.7:56040] AH: verifyclientposthandshake",
+    "expected": {
+        "@source_host": "aii01",
+        "loglevel": "error",
+        "tid": "139673653462784",
+        "errorcode": "AH",
+        "module": "ssl",
+        "program" :"httpd",
+        "client": "10.141.15.7",
+        "clientport": "56040",
+        "error_message": "verifyclientposthandshake",
+    }
+},
+{
+    "raw": "<179>1 2024-07-16T10:42:21.320640+02:00 storctrl02 httpd: - httpd:  [Tue Jul 16 10:42:21.316462 2024] [ssl:info] [pid 2423674:tid 140063287461632] [client 10.127.15.3:50670] AH01964: Connection to child 151 established (server storctrl02.hpc.vub.be:443)",
+    "expected": {
+        "@source_host": "storctrl02",
+        "loglevel": "info",
+        "tid": "140063287461632",
+        "errorcode": "AH01964",
+        "module": "ssl",
+        "program" :"httpd",
+        "client": "10.127.15.3",
+        "error_message": "Connection to child 151 established (server storctrl02.hpc.vub.be:443)",
+    }
+},
+]
