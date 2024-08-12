@@ -38,4 +38,17 @@ data = [
         'verb': 'GET',
     }
 },
+{
+    "raw": "2024-07-12T13:32:01.648735+02:00 aii01 httpd: [Fri Jul 12 13:32:01.648657 2024] [ssl:error] [pid 1162526:tid 139673653462784] [client 10.141.15.7:56040] AH: verifyclientposthandshake",
+    "expected": {
+        "@source_host": "aii01",
+        "loglevel": "error",
+        "tid": "139673653462784",
+        "errorcode": "AH",
+        "module": "ssl",
+        "program" :"httpd",
+        "client": "10.141.15.7",
+        "clientport": "56040",
+    }
+},
 ]

@@ -1,3 +1,5 @@
 APACHE_CUSTOM %{IPORHOST:clientip} %{HTTPDUSER:ident} %{USER:auth} \[%{HTTPDATE:timestamp}\] (?:%{NOTSPACE:ssl_protocol} )?(?:%{NOTSPACE:ssl_cipher} )?"(?:%{WORD:verb} %{NOTSPACE:request}(?: HTTP/%{NUMBER:httpversion})?|%{DATA:rawrequest})" %{NUMBER:response} (?:%{NUMBER:bytes}|-) %{QS:referrer} %{QS:agent}
 
-APACHE_MSG %{APACHE_CUSTOM}|%{COMBINEDAPACHELOG}|%{COMMONAPACHELOG}|%{HTTPD24_ERRORLOG}
+MY_HTTPD24_ERRORLOG \[%{HTTPDERROR_DATE:timestamp}\] \[%{WORD:module}:%{LOGLEVEL:loglevel}\] \[pid %{POSINT:pid}:tid %{NUMBER:tid}\]( \(%{POSINT:proxy_errorcode}\)%{DATA:proxy_errormessage}:)?( \[client %{IPORHOST:client}:%{POSINT:clientport}\])? %{DATA:errorcode}: %{GREEDYDATA:error_message}
+
+APACHE_MSG %{APACHE_CUSTOM}|%{COMBINEDAPACHELOG}|%{COMMONAPACHELOG}|%{MY_HTTPD24_ERRORLOG}
