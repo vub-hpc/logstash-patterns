@@ -49,6 +49,7 @@ data = [
         "program" :"httpd",
         "client": "10.141.15.7",
         "clientport": "56040",
+        "error_message": "verifyclientposthandshake",
     }
 },
 ]
