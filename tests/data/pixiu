@@ -303,4 +303,41 @@ data = [
             "used_space": 6108000000,
         },
     },
+    {
+        "raw": "<190>Aug 12 14:05:08 C4STO01-Node1 alarm[4162768]: <189>2024-08-12 14:05:08 DST 172.19.104.10 OceanStor-Distributed-Storage     1478853 0x200FEA670009 Informational(8): adm_wpoelmans:172.18.252.110 succeeded in setting alarm severity (alarm ID: 0xFEA6A000C, severity: warning).",
+        "expected": {
+            "program": "alarm",
+            "alarm_severity": "Informational",
+            "alarm_object": "OceanStor-Distributed-Storage",
+            "alarm_id": "0x200FEA670009",
+            "alarm_message": "adm_wpoelmans:172.18.252.110 succeeded in setting alarm severity (alarm ID: 0xFEA6A000C, severity: warning).",
+        },
+    },
+    {
+        "raw": "<190>Aug 13 15:04:36 HKSTO03-Node1 alarm[2003199]: <189>2024-08-13 15:04:34 DST 172.19.96.130 OceanStor-Distributed-Storage     1253732 0x200FEA6A009F Informational(8): objectrest:134.184.143.132 succeeded in creating namespace snapshot (name SNAP_2024_08_13_130433, namespace ID 702, namespace name sarl -auditlog, dtree ID --, dtree name --, whether it is a secure snapshot no, secure snapshot retention period - -, whether automatic deletion is supported no).",
+        "expected": {
+            "program": "alarm",
+            "alarm_severity": "Informational",
+            "alarm_severity_level": "8",
+            "alarm_object": "OceanStor-Distributed-Storage",
+            "alarm_id": "0x200FEA6A009F",
+            "alarm_message": "objectrest:134.184.143.132 succeeded in creating namespace snapshot (name SNAP_2024_08_13_130433, namespace ID 702, namespace name sarl -auditlog, dtree ID --, dtree name --, whether it is a secure snapshot no, secure snapshot retention period - -, whether automatic deletion is supported no).",
+        },
+    },
+    {
+        "raw": "<187>Aug 13 14:26:28 HKSTO03-Node1 alarm[2003199]: <186>2024-08-13 14:26:26 DST 172.19.96.130 OceanStor-Distributed-Storage     1253626 0xFEA6A001A Major(1): The used (space) quota (549755813888000) of account (ID 319307833) reaches or approaches (549755813888000) of the (space hard quota). Data writing is about to be rejected.",
+        "expected": {
+            "program": "alarm",
+            "alarm_severity": "Major",
+            "alarm_object": "OceanStor-Distributed-Storage",
+        },
+    },
+    {
+        "raw": "<187>Aug 13 14:27:19 HKSTO03-Node1 alarm[2003199]: <186>2024-08-13 14:26:26 DST 2024-08-13 14:27:17 DST 172.19.96.130 OceanStor-Distributed-Storage     1253626 0xFEA6A001A Major(2): The used (space) quota (549755813888000) of account (ID 319307833) reaches or approaches (549755813888000) of the (space hard quota). Data writing is about to be rejected.",
+        "expected": {
+            "program": "alarm",
+            "alarm_severity": "Major",
+            "alarm_object": "OceanStor-Distributed-Storage",
+        },
+    },
 ]
