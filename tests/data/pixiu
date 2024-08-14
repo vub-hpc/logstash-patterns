@@ -338,6 +338,10 @@ data = [
             "program": "alarm",
             "alarm_severity": "Major",
             "alarm_object": "OceanStor-Distributed-Storage",
+            "account_id": 319307833,
+            "quota_used_type": "space",
+            "quota_used": 549755813888000,
+            "quota_limit": 549755813888000,
         },
     },
 ]

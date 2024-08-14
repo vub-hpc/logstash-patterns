@@ -23,9 +23,11 @@ PIXIU_USER_SPACE_ALARM %{PIXIU_ALARM_PREFIX} %{PIXIU_ALARM_COMMON} reaches (?:or
 PIXIU_LOGIN_STATUS failed|succeeded
 PIXIU_LOGIN_ACTION in|out
 
+PIXIU_ACCOUNT_QUOTA %{PIXIU_ALARM_PREFIX} The used \((?<quota_used_type>%{WORD})\) quota \(%{NUMBER:quota_used}\) of account \(ID (?<account_id>%{NUMBER:int})\) reaches or approaches \(%{NUMBER:quota_limit}\) of the \(%{WORD} %{WORD} quota\)\..*
 
 PIXIU_LOGIN_ALARM %{PIXIU_ALARM_PREFIX} User \(user name %{USERNAME:username}\) %{PIXIU_LOGIN_STATUS:state} (?:to log %{PIXIU_LOGIN_ACTION:action}|in logging %{PIXIU_LOGIN_ACTION:action})(?: upon timeout)? from source \(%{IPORHOST:source_ip}\)\..*
 
 PIXIU_ALARM_GENERAL %{PIXIU_ALARM_PREFIX} %{GREEDYDATA:alarm_message}
 
-PIXIU_ALARM %{PIXIU_USER_INODE_ALARM}|%{PIXIU_USER_SPACE_ALARM}|%{PIXIU_LOGIN_ALARM}|%{PIXIU_ALARM_GENERAL}
+# PIXIU_ALARM_GENERAL must be last
+PIXIU_ALARM %{PIXIU_USER_INODE_ALARM}|%{PIXIU_USER_SPACE_ALARM}|%{PIXIU_LOGIN_ALARM}|%{PIXIU_ACCOUNT_QUOTA}|%{PIXIU_ALARM_GENERAL}
