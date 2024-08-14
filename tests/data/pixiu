@@ -345,8 +345,6 @@ data = [
         },
     },
     {
-#        "raw": '<174>Oct 17 12:50:42 HKSTO03-Node1 nginx 127.0.0.1 - -  [17/Oct/2022:12:50:42 +0200] "GET /dsware/service/cluster/storagepool/query*** HTTP/1.1" 200 "0.062" 924 "-" "Apache-HttpClient/5.1 (Java/1.8.0_322)" "-" 127.0.0.1:9527 200 "0.064" "********" "********" "********" "127.0.0.1" "application/json;charset=UTF-8" "-" "-" "gzip, x-gzip, deflate"',
-
         "raw": '<174>Aug 14 09:15:16 C4STO01-Node1 nginx 127.0.0.1 [14/Aug/2024:09:15:16 +0200] "GET /api/v2/cluster/se*** HTTP/1.1" 200 "0.046" 3072 "Apache-HttpClient/5.1 (Java/1.8.0_372)" "-" 127.0.0.1:8099 200 "0.046" "********" "********" "********" "127.0.0.1" "application/json;charset=UTF-8" "-" ',
         "expected": {
             "@source_host": "C4STO01-Node1",
@@ -354,6 +352,17 @@ data = [
             "clientip": "127.0.0.1",
             "verb": "GET",
             "request": "/api/v2/cluster/se***",
+            "response": 200,
+        },
+    },
+    {
+        "raw": '<174>Aug 14 16:00:24 C4STO01-Node1 nginx 134.184.143.132 [14/Aug/2024:16:00:05 +0200] "GET /api/v2/converged_service/nam*** HTTP/1.1" 200 "0.165" 48 "vsc-rest-client" "-" 127.0.0.1:8778 200 "0.166" "********" "None" "None" "" "-" "-" ',
+        "expected": {
+            "@source_host": "C4STO01-Node1",
+            "program": "nginx",
+            "clientip": "134.184.143.132",
+            "verb": "GET",
+            "request": "/api/v2/converged_service/nam***",
             "response": 200,
         },
     },
