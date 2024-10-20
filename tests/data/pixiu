@@ -100,7 +100,27 @@ data = [
         },
     },
     {
-        "raw": "<187>Aug 20 20:18:25 C4STO01-Node1 alarm[2613490]: <186>2023-08-20 20:18:25 DST 172.19.104.10 OceanStor-Distributed-Storage     259068 0xFEA6A000E Major(1): The used files (1501) of quota (type directory quota) of dtree (name test1, ID 4101) at / in namespace (name admin, ID 71) reaches to the file quantity soft quota of (1000).",
+        "raw": "<188>Oct 20 20:51:03 C4STO01-Node1 alarm[53019]: <188>2024-10-20 20:51:01 DST  OceanStor-Distributed-Storage     2171540 0xFEA6A000B Warning(1): The used files (3000) of quota (type directory quota) of dtree (name test, ID 4101) at /test in namespace (name backups, ID 98) reaches or approaches to the file quantity hard quota of (3000). Data will fail to be written.",
+        "expected": {
+            "@source_host": "C4STO01-Node1",
+            "program": "alarm",
+            "alarm_severity": "Warning",
+            "alarm_object": "OceanStor-Distributed-Storage",
+            "alarm_id": "0xFEA6A000B",
+            "used_files": 3000,
+            "quota_type": "directory",
+            "quota_used_type": "files",
+            "dtree": "test",
+            "dtree_id": 4101,
+            "namespace": "backups",
+            "namespace_id": 98,
+            "quota_limit_type": "hard",
+            "quota_files_limit": 3000,
+            "path": "/test",
+        },
+    },
+    {
+        "raw": "<187>Aug 20 20:18:25 C4STO01-Node1 alarm[26190]: <186>2023-08-20 20:18:25 DST 172.19.104.10 OceanStor-Distributed-Storage     259068 0xFEA6A000E Major(1): The used files (1501) of quota (type directory quota) of dtree (name test1, ID 4101) at / in namespace (name admin, ID 71) reaches to the file quantity soft quota of (1000).",
         "expected": {
             "@source_host": "C4STO01-Node1",
             "program": "alarm",
