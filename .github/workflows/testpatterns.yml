@@ -6,7 +6,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:
       - name: add logstash repo
-        uses: myci-actions/add-deb-repo@master
+        uses: myci-actions/add-deb-repo@11
         with:
             repo: deb https://artifacts.elastic.co/packages/8.x/apt stable main
             repo-name: elastic-8.x

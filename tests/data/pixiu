@@ -418,4 +418,21 @@ data = [
             "response": 200,
         },
     },
+    {
+        "raw": "<187>Oct 24 13:47:36 HKSTO03-Node1 alarm[79311]: <186>2024-10-24 13:47:35 DST  OceanStor-Distributed-Storage     1678359 0xFEA6A000B Major(1): The used space (10KB) of quota (type directory quota) of dtree (name --, ID 0) at / in namespace (name my -new -bucket, ID 592) reaches or approaches to the space hard quota of (10KB). Data will fail to be written.",
+        "expected": {
+            "program": "alarm",
+            "quota_used_type": "directory",
+            "namespace": "my -new -bucket",
+            "namespace_id": 592,
+            "dtree": "--",
+            "dtree_id": 0,
+            "used_space": 10000,
+            "quota_used_type": "space",
+            "quota_type": "directory",
+            "quota_limit_type": "hard",
+            "quota_space_limit": 10000,
+            "path": "/",
+        },
+    },
 ]
