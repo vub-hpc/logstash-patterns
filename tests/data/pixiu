@@ -54,7 +54,7 @@ data = [
         "expected": {
             "@source_host": "C4STO01-Node2",
             "program": "libstorage-iostat-enable",
-            "pid": "1965645",
+            "pid": 1965645,
         },
     },
     {
