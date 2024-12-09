@@ -6,8 +6,19 @@ data = [
         "@source_host": "master01",
         "program": "-bash",
         "uid": 0,
-        "pid": 23883,
+        "bash_pid": 23883,
         "command": "echo boem",
+    }
+},
+{
+    "raw": "<14>1 2024-12-09T11:18:16.406259+01:00 storctrl02 -bash[1102070]: - -bash:  HISTORY: PID=1102070 UID=4005 sudo cat /etc/cron.d/aad-*",
+    "expected": {
+        "@source_host": "storctrl02",
+        "program": "-bash",
+        "uid": 4005,
+        "pid": 1102070,
+        "bash_pid": 1102070,
+        "command": "sudo cat /etc/cron.d/aad-*",
     }
 },
 ]
