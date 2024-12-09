@@ -27,7 +27,7 @@ data = [
             "@source_host": "login3",
             "appname": "python2",
             "program": "python2",
-            "pid": "7245",
+            "pid": 7245,
         }
     },
 ]

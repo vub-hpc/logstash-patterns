@@ -1,1 +1,1 @@
-BASH_MSG HISTORY: PID=%{INT:pid:int} UID=%{INT:uid:int} %{GREEDYDATA:command}
+BASH_MSG HISTORY: PID=%{INT:bash_pid} UID=%{INT:uid} %{GREEDYDATA:command}
