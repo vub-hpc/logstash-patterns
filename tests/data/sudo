@@ -53,7 +53,8 @@ data = [
             "sudo_pwd": "/",
             "sudo_runas": "root",
             "sudo_user": "apache",
-            "sudo_command": "/opt/ood/nginx_stage/sbin/nginx_stage pun -u vsc10520 -a https%3a%2f%2fportal.hpc.vub.be%3a443%2fnginx%2finit%3fredir%3d%24http_x_forwarded_escaped_uri",
+            "pun_command": "pun",
+            "pun_user": "vsc10520",
         },
     },
 ]
