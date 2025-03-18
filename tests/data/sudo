@@ -45,4 +45,16 @@ data = [
             "sudo_command": "../../../module/harm/plugin/script/harm_mgr.sh floatIP.sh status active key1=value1; 0 ha2",
         },
     },
+    {
+        "raw": "<85>1 2025-03-18T15:11:22.912566+01:00 ood11 sudo: - sudo:    apache : PWD=/ ; USER=root ; COMMAND=/opt/ood/nginx_stage/sbin/nginx_stage pun -u vsc10520 -a https%3a%2f%2fportal.hpc.vub.be%3a443%2fnginx%2finit%3fredir%3d%24http_x_forwarded_escaped_uri",
+        "expected": {
+            "@source_host": "ood11",
+            "program": "sudo",
+            "sudo_pwd": "/",
+            "sudo_runas": "root",
+            "sudo_user": "apache",
+            "pun_command": "pun",
+            "pun_user": "vsc10520",
+        },
+    },
 ]
