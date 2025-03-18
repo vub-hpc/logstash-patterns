@@ -6,7 +6,7 @@ SUDO_COMMAND COMMAND=%{GREEDYDATA:sudo_command}
 SUDO_USER %{NOTSPACE:sudo_user}
 SUDO_RUNAS USER=%{NOTSPACE:sudo_runas}
 
-SUDO_INFO_COMMAND_SUCCESSFUL %{SUDO_USER} : %{SUDO_TTY} ; %{SUDO_PWD} ; %{SUDO_RUNAS} ; %{SUDO_COMMAND}
+SUDO_INFO_COMMAND_SUCCESSFUL %{SUDO_USER} : (?:%{SUDO_TTY} ; )?%{SUDO_PWD} ; %{SUDO_RUNAS} ; %{SUDO_COMMAND}
 SUDO_INFO_PAM_UNIX_SESSION_OPENED pam_unix\(sudo:session\): (?<sudo_message>session opened) for user %{NOTSPACE:sudo_runas} by %{SUDO_USER}\(uid=%{NUMBER}\)
 SUDO_INFO_PAM_UNIX_SESSION_CLOSED pam_unix\(sudo:session\): (?<sudo_message>session closed) for user %{NOTSPACE:sudo_runas}
 
