@@ -21,5 +21,14 @@ data = [
         'syslog_version': '1',
     }
 },
-
+{
+    "raw": "<5>1 2025-07-11T16:15:23.882825+02:00 login1 kernel: - kernel:  nfs: server icts-n-hpc-01.icts.leuven.vsc not responding, timed out",
+    "expected": {
+        "appname": "kernel",
+        "program": "kernel",
+        "@source_host": "login1",
+        "nfsreason": "not responding, timed out",
+        "nfsserver": "icts-n-hpc-01.icts.leuven.vsc",
+    }
+},
 ]
