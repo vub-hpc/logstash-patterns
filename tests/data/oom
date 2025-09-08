@@ -1,0 +1,32 @@
+data = [
+    {
+        "raw": "<6>1 2025-05-13T08:30:04.107564+02:00 node300 kernel: - kernel:  oom-kill:constraint=CONSTRAINT_MEMCG,nodemask=(null),cpuset=step_0,mems_allowed=0-3,oom_memcg=/slurm/uid_2510668/job_10755228,task_memcg=/slurm/uid_2510668/job_10755228/step_0/task_0,task=vasp_std,pid=44266,uid=2510668",
+        "expected": {
+            "@source_host": "node300",
+            "program": "kernel",
+        }
+    },
+    {
+        "raw": "<6>1 2025-04-28T11:29:49.162661+02:00 node618 kernel: - kernel:  oom-kill:constraint=CONSTRAINT_MEMCG,nodemask=(null),cpuset=step_batch,mems_allowed=0-15,oom_memcg=/slurm/uid_2511201/job_10666405,task_memcg=/slurm/uid_2511201/job_10666405/step_batch/task_0,task=ase,pid=857594,uid=2511201",
+        "expected": {
+            "@source_host": "node618",
+            "program": "kernel",
+        }
+    },
+    {
+        "raw": "<6>1 2025-09-03T11:27:36.368324+02:00 node706 kernel: - kernel:  oom-kill:constraint=CONSTRAINT_MEMORY_POLICY,nodemask=3,cpuset=gpfs.service,mems_allowed=0-31,global_oom,task_memcg=/system.slice/slurmstepd.scope/job_11048783/step_batch/user/task_0,task=python,pid=549012,uid=2510053",
+        "expected": {
+            "@source_host": "node706",
+            "program": "kernel",
+            "constraint": "CONSTRAINT_MEMORY_POLICY",
+            "nodemask": "3",
+            "cpuset": "gpfs.service",
+            "mems_allowed": "0-31",
+            "task_memcg": "/system.slice/slurmstepd.scope/job_11048783/step_batch/user/task_0",
+            "task": "python",
+            "pid": 549012,
+            "uid": 2510053,
+            "global_oom": "true",
+        }
+    },
+]
