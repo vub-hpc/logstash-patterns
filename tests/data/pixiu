@@ -435,4 +435,21 @@ data = [
             "path": "/",
         },
     },
+    {
+        "raw": "<187>Oct  1 08:17:01 NEX-STOR-PIX-1A alarm[3966612]: <186>2025-10-01 08:16:59 DST  Cluster-Nexus     5965446 0xFEA6A000E Major(1): The used space (943824MB) of quota (type directory quota) of dtree (name --, ID 0) at / in namespace (name diab -preklin, ID 1025) reaches to the space soft quota of (943718MB).",
+        "expected": {
+            "program": "alarm",
+            "quota_used_type": "directory",
+            "namespace": "diab -preklin",
+            "namespace_id": 1025,
+            "dtree": "--",
+            "dtree_id": 0,
+            "used_space": 989671194624,
+            "quota_used_type": "space",
+            "quota_type": "directory",
+            "quota_limit_type": "soft",
+            "quota_space_limit": 989560045568,
+            "path": "/",
+        },
+    },
 ]

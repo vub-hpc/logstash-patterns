@@ -6,7 +6,7 @@ PIXIU_NGINX \s*%{IPORHOST:syslog_hostname} %{SYSLOGPROG} %{IPORHOST:clientip} (?
 
 PIXIU_TOMCAT \s*%{IPORHOST:syslog_hostname} %{SYSLOGPROG} \[%{HTTPDATE:timestamp}\]\^%{IPORHOST:clientip}\^%{HTTPDUSER:auth}\^%{WORD:verb} %{NOTSPACE:request} HTTP/%{NUMBER:httpversion}\^%{GREEDYDATA:other}
 
-PIXIU_ALARM_PREFIX \s*%{IPORHOST:syslog_hostname} %{SYSLOGPROG}: .+ (?<alarm_object>OceanStor-Distributed-Storage)\s+%{NUMBER} (?<alarm_id>0x[A-F0-9]+) (?<alarm_severity>%{WORD})\(%{NUMBER:alarm_severity_level}\):
+PIXIU_ALARM_PREFIX \s*%{IPORHOST:syslog_hostname} %{SYSLOGPROG}: .+ (?<alarm_object>(OceanStor-Distributed-Storage|Cluster-Nexus))\s+%{NUMBER} (?<alarm_id>0x[A-F0-9]+) (?<alarm_severity>%{WORD})\(%{NUMBER:alarm_severity_level}\):
 
 PIXIU_ALARM_USER_TYPE user name, owner name %{USERNAME:username}
 
