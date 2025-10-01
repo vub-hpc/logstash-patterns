@@ -440,6 +440,7 @@ data = [
         "expected": {
             "program": "alarm",
             "quota_used_type": "directory",
+            "alarm_object": "Cluster-Nexus",
             "namespace": "diab -preklin",
             "namespace_id": 1025,
             "dtree": "--",
