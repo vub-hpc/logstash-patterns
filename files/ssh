@@ -10,7 +10,7 @@ SSH_SUBSYSTEM .*?subsystem request for (?<subsystem>.*)
 SSH_DISCONNECT_USER .*?Received disconnect from %{IPORHOST:ip}: %{NONNEGINT}: (?<reason>disconnected by user)$
 SSH_DISCONNECT_OTHER Disconnected from %{IPORHOST:ip} port %{NONNEGINT}
 SSH_DISCONNECT %{SSH_DISCONNECT_USER}|%{SSH_DISCONNECT_OTHER}
-SSH_VALID_INVALID .*?(?<status>Accepted|Failed|Invalid user)(?: %{WORD:method} for)? %{USERNAME_PAT} from %{IPORHOST:ip}(?: port %{NONNEGINT:port:int})?(?: ssh2: %{NOTSPACE:ssh_key_type} %{GREEDYDATA:ssh_key_fingerprint})?
+SSH_VALID_INVALID .*?(?<status>Accepted|Failed|Invalid user)(?: %{WORD:method} for)? %{USERNAME_PAT} from %{IPORHOST:ip}(?: port %{NONNEGINT:port:int})?(?: ssh2: %{NOTSPACE:ssh_key_type} %{NOTSPACE:ssh_key_fingerprint})?(?: ID %{NOTSPACE:ssh_key_id} \(serial %{NUMBER:ssh_key_serial}\) CA %{WORD} %{NOTSPACE:ssh_key_ca})?
 SSH_INPUT_USERAUTH .*?input_userauth_request: (?<inputuserauth>invalid user %{USERNAME_PAT})
 SSH_AUTH_REFUSED .*?Authentication refused: bad ownership or modes for file %{PATH:ownerpath}
 

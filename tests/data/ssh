@@ -147,4 +147,22 @@ data = [
         'ip': '109.136.238.10',
     }
 },
+{
+    "raw": "<86>2026-02-16T14:34:31.066586+01:00 nat01 sshd[2311275]: Accepted publickey for foobar from 172.29.250.169 port 49796 ssh2: ECDSA-CERT SHA256:yh7POrEsO2vI1dNAOxJvx9sTX4IJngTSBMSbFixLcC4 ID foo.bar@vub.be (serial 12736556587902631467) CA ECDSA SHA256:vMNsBr6xQPP9JyLJoTsnYChbH322NvkhQica6BUE+lo",
+    "expected": {
+        'program': 'sshd',
+        'syslog_abspri': '86',
+        'username': 'foobar',
+        '@source_host': 'nat01',
+        'method': 'publickey',
+        'port': 49796,
+        'status': 'Accepted',
+        'ssh_key_type': 'ECDSA-CERT',
+        'ssh_key_fingerprint': 'SHA256:yh7POrEsO2vI1dNAOxJvx9sTX4IJngTSBMSbFixLcC4',
+        'ssh_key_id': 'foo.bar@vub.be',
+        'ssh_key_serial': '12736556587902631467',
+        'ssh_key_ca': 'SHA256:vMNsBr6xQPP9JyLJoTsnYChbH322NvkhQica6BUE+lo',
+        'ip': '172.29.250.169',
+    }
+},
 ]
